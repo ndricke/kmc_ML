@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 
-
+# convert 2 strings, ie 'A' and 'B', to 'AB+BA'. Handles case of 'A' and 'A', where it's 'AA'
 def B2_convert(site1, site2):
     assert type(site1) == str and type(site2) == str
     assert len(site1) == 1 and len(site2) == 1
@@ -16,6 +16,7 @@ def B2_convert(site1, site2):
             site1, site2 = site2, site1
         return site1+site2+"+"+site2+site1
 
+# convert 'A', 'B', and 'C', to 'ABC+CBA'
 def B3_convert(B3):
     # B3 is a 3 letter string representing the 3-site correlation term
     assert type(B3) == str and len(B3) == 3
